@@ -10,6 +10,10 @@ var i = 0;
 
 $(document).on("keydown", gameStart);
 $("[type = button]").on("click", clickHandler);
+$(".btn-start").on("click", function(){
+    $(this).css("visibility", "hidden");
+    gameStart();
+});
 
 function gameStart() {
     if (!gameStarted) {
@@ -40,7 +44,8 @@ function clickHandler() {
         else {
             wrongSound.play();
             $("h1").text("Wrong! try again, level reached : " + soundsSequence.length);
-
+            $(".btn-start").css("visibility", "visible");
+            $(".btn-start").text("Restart");
             gameStarted = false;
             playerTurn = false
         }
