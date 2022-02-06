@@ -18,7 +18,7 @@ $(".btn-start").on("click", function(){
 function gameStart() {
     if (!gameStarted) {
         gameStarted = true;
-        soundsSequence = [];
+        soundsSequence.length = 0;
         soundsSequence.push(generateSoundSequence());
         $("h1").text("Level " + soundsSequence.length);
         playerTurn = true;
